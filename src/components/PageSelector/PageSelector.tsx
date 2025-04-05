@@ -20,7 +20,8 @@ const PageSelector: React.FC<PageSelectorProps> = ({ pages, onDone }) => {
         if (isAllPagesSelected) {
           return [];
         } else {
-          return ['All pages'];
+          // Select all pages when "All pages" is clicked
+          return ['All pages', ...pages.filter(p => p !== 'All pages')];
         }
       }
       
